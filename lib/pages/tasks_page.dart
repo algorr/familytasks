@@ -18,7 +18,7 @@ class TasksPage extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {},
-                child: const Text("go"),
+                child: const Text("Go"),
               ),
             ],
           ),
