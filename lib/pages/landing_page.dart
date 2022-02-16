@@ -14,41 +14,31 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<BottomNavyController>(
       builder: (controller) => Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          title: const Text("Family Tasks", style: TextStyle(color: Colors.black,fontSize: 30),),
-          centerTitle: true,
-        ),
         bottomNavigationBar: BottomNavyBar(
           selectedIndex: controller.tabindex,
           items: [
             BottomNavyBarItem(
-              icon: const Icon(Icons.home_rounded),
-              title: const Text("Home"),
-              inactiveColor: Colors.black
-            ),
+                icon: const Icon(Icons.home_rounded),
+                title: const Text("Home"),
+                inactiveColor: Colors.black),
             BottomNavyBarItem(
-              icon: const Icon(Icons.task_rounded),
-              title: const Text("Progress"),
-              inactiveColor: Colors.black
-            ),
+                icon: const Icon(Icons.task_rounded),
+                title: const Text("Progress"),
+                inactiveColor: Colors.black),
             BottomNavyBarItem(
-              icon: const Icon(Icons.inbox_rounded),
-              title: const Text("Inbox"),
-              inactiveColor: Colors.black
-            ),
+                icon: const Icon(Icons.inbox_rounded),
+                title: const Text("Inbox"),
+                inactiveColor: Colors.black),
             BottomNavyBarItem(
-              icon: const Icon(Icons.person_rounded),
-              title: const Text("Profile"),
-              inactiveColor: Colors.black
-            ),
+                icon: const Icon(Icons.person_rounded),
+                title: const Text("Profile"),
+                inactiveColor: Colors.black),
           ],
           onItemSelected: controller.currentIndex,
         ),
         body: SafeArea(
             child: IndexedStack(
-              index: controller.tabindex,
+          index: controller.tabindex,
           children: const [
             TasksPage(),
             ProgressPage(),

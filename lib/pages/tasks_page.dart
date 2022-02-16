@@ -12,14 +12,14 @@ class TasksPage extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              ListView.builder(
-                  itemCount: controller.tasks.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return ListTile(
-                      leading: Icon(Icons.mark_chat_read_rounded),
-                      title: controller.getTask),
-                    );
-                  }),
+              const Padding(
+                padding: EdgeInsets.all(10),
+                child: Text('My Tasks',style: TextStyle(fontSize: 35),),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                child: const Text("go"),
+              ),
             ],
           ),
         ),

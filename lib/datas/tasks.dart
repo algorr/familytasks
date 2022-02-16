@@ -1,20 +1,51 @@
-class Tasks {
-  int taskId;
-  String title;
-  String text;
-  bool priority;
+import 'dart:ui';
 
-  Tasks({
-    required this.taskId,
-    required this.title,
-    required this.text,
-    required this.priority,
-  });
+import 'package:equatable/equatable.dart';
 
-  List<Tasks> taskList = [
-    Tasks(taskId:1, title: "Kedi", text: "Kediye mama ver", priority: true),
-    Tasks(taskId:1, title: "Bulaşık", text: "Makinayı çalıştır", priority: false),
-    Tasks(taskId:1, title: "Temizlik", text: "Robotu çalıştır", priority: false),
-    Tasks(taskId:1, title: "Çocuk", text: "Çocuğu okuldan al", priority: true),
-  ];
+class Tasks extends Equatable {
+  final String title;
+  final Color color;
+  final int icon;
+  final bool priority;
+  final List<dynamic>? todos;
+
+  Tasks(
+      {required this.title,
+      required this.color,
+      required this.icon,
+      required this.priority,
+      this.todos});
+
+  Tasks instead({
+    String? title,
+    int? icon,
+    Color? color,
+    List<dynamic>? todos,
+  }) =>
+      Tasks(
+        title: title ?? this.title,
+        color: color ?? this.color,
+        icon: icon ?? this.icon,
+        priority: false,
+        todos: todos ?? this.todos,
+      );
+
+  factory Tasks.fromJson(Map<String, dynamic> json) => Tasks(
+        title: json['title'],
+        color: json['color'],
+        icon: json['icon'],
+        priority: json['priority'],
+        todos: json['todos'],
+      );
+
+  Map<String, dynamic> toJson() => {
+        'title': title,
+        'icon': icon,
+        'color': color,
+        'priority': priority,
+        'todos': todos,
+      };
+
+  @override
+  List<Object?> get props => [title, icon, color];
 }

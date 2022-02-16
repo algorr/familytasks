@@ -1,10 +1,24 @@
-import 'package:familytasks/datas/tasks.dart';
 import 'package:get/get.dart';
 
-class TasksPageController extends GetxController {
-  var taskList = {};
+import '../datas/tasks.dart';
+import '../repository/repository_tasks.dart';
 
-  void getTask(Tasks tasks) {
-    
+class TasksPageController extends GetxController {
+  TasksRepository tasksRepository;
+
+  TasksPageController({required this.tasksRepository});
+
+  final tasks = <Tasks>[].obs;
+
+  @override
+  void onInit() {
+    super.onInit();
+    tasks.assignAll(tasksRepository.readTasks());
+    ever(tasks, (_) => tasksRepository.writeTasks(tasks));
+  }
+
+  @override
+  void onClose() {
+    super.onClose();
   }
 }
