@@ -39,6 +39,7 @@ dependencies:
   get_storage: ^2.0.3
   equatable: ^2.0.3
   google_fonts: ^2.3.1
+  dotted_border: ^2.0.0+2
 
 dev_dependencies:
   flutter_test:
