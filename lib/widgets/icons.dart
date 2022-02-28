@@ -4,31 +4,33 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../values/icons.dart';
 
+
 List<Icon> icons() {
   return const [
     Icon(
-      IconData(userIcon),
+      IconData(0xf01f3, fontFamily: 'MaterialIcons'),
+      color: Colors.amber,
+    ),
+    Icon(
+      IconData(0xf02c7, fontFamily: 'MaterialIcons'),
       color: blue,
     ),
     Icon(
-      IconData(jobIcon),
-      color: Colors.black,
-    ),
-    Icon(
-      IconData(sportIcon),
+      IconData(0xe231, fontFamily: 'MaterialIcons'),
       color: green,
     ),
     Icon(
-      IconData(shopIcon),
+      IconData(0xf0171, fontFamily: 'MaterialIcons'),
       color: yellow,
     ),
     Icon(
-      IconData(dinnerIcon),
+      IconData(0xe1d0, fontFamily: 'MaterialIcons'),
       color: pink,
     ),
     Icon(
-      IconData(gameIcon),
-      color: purple,
+      IconData(0xf01bc, fontFamily: 'MaterialIcons'),
+      color: Colors.red,
     ),
   ];
 }
+

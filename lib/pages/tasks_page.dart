@@ -1,27 +1,35 @@
-import 'package:familytasks/controllers/tasks_page_controller.dart';
+
+import 'package:familytasks/utils/extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
+
+
+import '../widgets/my_card.dart';
 
 class TasksPage extends StatelessWidget {
   const TasksPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<TasksPageController>(
-      builder: (controller) => Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              const Padding(
-                padding: EdgeInsets.all(10),
-                child: Text('My Tasks',style: TextStyle(fontSize: 35),),
+    return Scaffold(
+      body: SafeArea(
+        child: ListView(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(4.0.wp),
+              child: Text(
+                "My Tasks",
+                style: TextStyle(fontSize: 25.0.sp),
               ),
-              ElevatedButton(
-                onPressed: () {},
-                child: const Text("Go"),
-              ),
-            ],
-          ),
+            ),
+            GridView.count(
+              crossAxisCount: 2,
+              shrinkWrap: true,
+              physics: const ClampingScrollPhysics(),
+              children: [
+                MyCard(),
+              ],
+            )
+          ],
         ),
       ),
     );

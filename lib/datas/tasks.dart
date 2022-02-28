@@ -4,7 +4,7 @@ import 'package:equatable/equatable.dart';
 
 class Tasks extends Equatable {
   final String title;
-  final Color color;
+  final String color;
   final int icon;
   final bool priority;
   final List<dynamic>? todos;
@@ -19,7 +19,7 @@ class Tasks extends Equatable {
   Tasks instead({
     String? title,
     int? icon,
-    Color? color,
+    String? color,
     List<dynamic>? todos,
   }) =>
       Tasks(
