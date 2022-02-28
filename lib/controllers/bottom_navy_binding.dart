@@ -4,9 +4,10 @@ import 'package:familytasks/controllers/profile_page_controller.dart';
 import 'package:familytasks/controllers/progress_page_controller.dart';
 import 'package:familytasks/controllers/tasks_page_controller.dart';
 import 'package:familytasks/provider/provider_local_storage.dart';
-import 'package:familytasks/repository/repository_tasks.dart';
+
 import 'package:get/get.dart';
 
+import '../repository/tasks_repository.dart';
 import 'landing_page_controller.dart';
 
 class BottomNavyBinding extends Bindings {

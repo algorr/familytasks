@@ -3,9 +3,11 @@ import 'package:familytasks/controllers/bottom_navy_controller.dart';
 import 'package:familytasks/pages/box_page.dart';
 import 'package:familytasks/pages/profile_page.dart';
 import 'package:familytasks/pages/progress_page.dart';
-import 'package:familytasks/pages/tasks_page.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+
+import 'tasks_page.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);

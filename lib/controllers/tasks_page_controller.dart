@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../datas/tasks.dart';
-import '../repository/repository_tasks.dart';
+import '../repository/tasks_repository.dart';
 
 class TasksPageController extends GetxController {
   TasksRepository tasksRepository;
